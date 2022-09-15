@@ -1,7 +1,7 @@
--- create database Testing_System_Assignment_1
-DROP DATABASE IF EXISTS Testing_System_Assignment_1;
-CREATE DATABASE Testing_System_Assignment_1;
-USE Testing_System_Assignment_1;
+-- create database Testing_System_Assignment_2
+DROP DATABASE IF EXISTS Testing_System_Assignment_2;
+CREATE DATABASE Testing_System_Assignment_2;
+USE Testing_System_Assignment_2;
 
 -- create table 1: Department 
 CREATE TABLE Department(
@@ -84,10 +84,10 @@ FOREIGN KEY (question_id) REFERENCES Question(question_id)
 -- create table 10: Exam 
 CREATE TABLE Exam(
 exam_id			INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-`code`			VARCHAR(50) NOT NULL,
+`code`			VARCHAR(50) UNIQUE KEY NOT NULL,
 title			VARCHAR(50) NOT NULL,
 category_id		INT UNSIGNED NOT NULL, 
-duration		TIME,
+duration		TIME NOT NULL,
 creator_id		INT UNSIGNED NOT NULL, 
 create_date		DATE,
 FOREIGN KEY (category_id) REFERENCES Category_question(category_id),
